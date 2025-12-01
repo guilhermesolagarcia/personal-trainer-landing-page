@@ -295,7 +295,7 @@ body {
 
 
 /* ==================================== */
-/* 7. SEÇÃO CONTATO E FORMULÁRIO */
+/* 8. SEÇÃO CONTATO E FORMULÁRIO */
 /* ==================================== */
 .secao-contato {
     background-color: var(--cor-fundo-secundario); /* Cinza Escuro */
@@ -385,4 +385,68 @@ body {
 .redes-sociais a:hover {
     opacity: 1;
     color: var(--cor-primaria-acao); /* Destaque Vermelho no hover */
+}
+
+
+/* ==================================== */
+/* 9. CABEÇALHO E NAVEGAÇÃO */
+/* ==================================== */
+.cabecalho-fixo {
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo-principal); /* Fundo Preto */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.cabecalho-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo-nome {
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    font-size: 1.5em;
+    color: var(--cor-texto-principal);
+}
+
+.logo-pt {
+    color: var(--cor-primaria-acao); /* "PT" em Vermelho para destaque */
+}
+
+.lista-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.link-menu {
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.link-menu:hover {
+    color: var(--cor-primaria-acao); /* Destaque Vermelho no hover */
+}
+
+/* O CTA do Menu deve usar o estilo de botão para se destacar */
+.menu-cta {
+    /* Herda o estilo do .botao-cta */
+    font-size: 0.9em;
+    padding: 10px 20px;
+}
+
+/* Ajuste para evitar que o conteúdo da Capa Inicial fique escondido pelo cabeçalho fixo */
+body {
+    padding-top: 60px; /* Adiciona um padding no topo do body equivalente à altura do header */
 }
