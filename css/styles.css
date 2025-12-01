@@ -482,6 +482,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
+    flex-wrap: nowrap; /* Tenta manter tudo na mesma linha, mas pode forçar scroll horizontal */
 }
 
 .logo-nome {
@@ -495,10 +496,13 @@ body {
     color: var(--cor-primaria-acao); /* "PT" em Vermelho para destaque */
 }
 
+
+
 .lista-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 15px; /* Reduz de 30px para 15px */
+    padding: 0; 
     align-items: center;
 }
 
@@ -582,5 +586,158 @@ body {
     }
     .rodape-sociais {
         margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+/* ==================================== */
+/* 10. MEDIA QUERIES (TABLET & DESKTOP) */
+/* ==================================== */
+
+/* --- A partir de 768px de largura --- */
+@media (min-width: 768px) {
+    
+    /* 1. TIPOGRAFIA (Aumentar para telas maiores) */
+    .capa-titulo {
+        font-size: 6.5em; /* Aumenta o impacto do título H1 */
+    }
+
+    .titulo-secao {
+        font-size: 4em; /* Aumenta os títulos H2 */
+    }
+    
+    /* 2. CABEÇALHO  */
+    .menu-cta {
+        /* display: none; */ 
+    }
+    
+    /* 3. ALINHAMENTO DE CONTEÚDO  */
+    .contato-container {
+        flex-direction: row; /* Volta a alinhar o formulário e info lado a lado */
+        text-align: left;
+    }
+    
+    .formulario-contato {
+        padding-right: 20px;
+    }
+    
+    /* 4. FOOTER (Garante alinhamento horizontal) */
+    .rodape-container {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* --- A partir de 1024px de largura --- */
+@media (min-width: 1024px) {
+
+    /* Dar mais espaço para o conteúdo principal */
+    .secao-conteudo, .secao-contato {
+        padding: 120px 10%; /* Aumenta o padding vertical e horizontal */
+    }
+    
+    /* Aumentar o tamanho da fonte para leitura no desktop */
+    .capa-titulo {
+        font-size: 7.5em; 
+    }
+
+    .metodologia-passos, .depoimentos-container, .planos-container {
+        flex-wrap: nowrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* ==================================== */
+/* 11. AJUSTES FINOS PARA TELAS MUITO PEQUENAS (Mobile First) */
+/* (Abaixo de 425px, como smartphones menores) */
+/* ==================================== */
+@media (max-width: 425px) {
+    
+    /* 1. SEÇÃO PRINCIPAL (Capa Inicial) */
+    .capa-titulo {
+        font-size: 3em; /* Reduz drasticamente o H1 para caber na tela */
+    }
+
+    /* 2. CABEÇALHO / NAVEGAÇÃO */
+    .cabecalho-container {
+        padding: 10px 3%; /* Reduz o padding para salvar espaço horizontal */
+    }
+    
+    .lista-links {
+        gap: 15px; /* Reduz o espaçamento entre os itens do menu */
+    }
+
+    .menu-cta {
+        padding: 8px 12px; /* Reduz o tamanho do botão CTA no menu */
+        font-size: 0.8em;
+    }
+    
+    /* 3. TÍTULOS DE SEÇÃO */
+    .titulo-secao {
+        font-size: 2em; /* Reduz o H2 para evitar quebra de linha */
+        margin-bottom: 40px;
+    }
+
+    /* 4. BOTÕES E PADDING GERAL */
+    .secao-conteudo, .secao-contato {
+        padding: 60px 3%; /* Reduz o padding vertical e lateral de todas as seções */
+    }
+
+    .botao-cta {
+        padding: 15px 20px; /* Reduz o padding do botão para ficar mais compacto */
+        font-size: 1em;
+    }
+
+    /* 5. DEPOIMENTOS */
+    /* Garante que o texto do depoimento não fique muito grande */
+    .depoimento-texto {
+        font-size: 1em;
+    }
+
+    .depoimento-texto::before {
+        font-size: 4em; /* Reduz o tamanho das aspas grandes */
+        top: -10px;
+        left: -10px;
+    }
+
+    /* 6. PLANOS (Card de Destaque) */
+    .plano-destaque {
+        transform: scale(1.0);
+        margin-bottom: 20px; 
+    }
+
+    /* 7. CABEÇALHO / NAVEGAÇÃO */
+    .cabecalho-container {
+        padding: 10px 15px;
+        /* Centraliza o conteúdo (Logo) e esconde o menu */
+        justify-content: center; 
+    }
+    .menu-navegacao {
+        display: none; 
+    }
+    
+    /* 2. LOGO (Para o cabeçalho) */
+    .logo-nome {
+        font-size: 1.4em; /* Mantém um bom tamanho para a marca */
+        text-align: center;
+        width: 100%; /* Ocupa todo o espaço que a navegação liberou */
+    }
+
+    /* 3. SEÇÃO PRINCIPAL (Capa Inicial) */
+    .capa-titulo {
+        font-size: 3em; 
+    }
+    
+    /* 4. PADDING GERAL (Para evitar quebra) */
+    .secao-conteudo, .secao-contato {
+        padding: 60px 5%; 
+    }
+    
+    .plano-destaque {
+        transform: scale(1.0);
     }
 }
