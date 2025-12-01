@@ -147,3 +147,56 @@ body {
     color: var(--cor-texto-principal);
     opacity: 0.8; /* Texto um pouco mais suave */
 }
+
+
+/* ==================================== */
+/* 5. SEÇÃO DEPOIMENTOS */
+/* ==================================== */
+.secao-depoimentos {
+    background-color: var(--cor-fundo-secundario); /* Cinza Escuro para contraste com o fundo preto principal */
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.depoimentos-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    flex-wrap: wrap; 
+}
+
+.depoimento-card {
+    background-color: var(--cor-fundo-principal); /* Fundo preto novamente para alto contraste */
+    padding: 30px;
+    max-width: 380px;
+    flex: 1 1 300px;
+    text-align: left;
+    border-radius: 8px;
+    border-left: 5px solid var(--cor-primaria-acao); /* Destaque P/B/V na lateral */
+}
+
+.depoimento-texto {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.depoente-info {
+    display: flex;
+    justify-content: space-between; /* Alinha nome à esquerda e estrelas à direita */
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.depoente-nome {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria-acao); /* Nome em vermelho para autenticidade */
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.depoente-avaliacao {
+    color: gold; /* Estrelas em dourado (ou amarelo) para padrão visual de avaliação */
+    font-size: 1.1em;
+}
