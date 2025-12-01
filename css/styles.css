@@ -436,17 +436,75 @@ body {
 }
 
 .link-menu:hover {
-    color: var(--cor-primaria-acao); /* Destaque Vermelho no hover */
+    color: var(--cor-primaria-acao); 
 }
 
-/* O CTA do Menu deve usar o estilo de botão para se destacar */
 .menu-cta {
-    /* Herda o estilo do .botao-cta */
     font-size: 0.9em;
     padding: 10px 20px;
 }
 
-/* Ajuste para evitar que o conteúdo da Capa Inicial fique escondido pelo cabeçalho fixo */
 body {
-    padding-top: 60px; /* Adiciona um padding no topo do body equivalente à altura do header */
+    padding-top: 60px; 
+}
+
+
+/* ==================================== */
+/* 9. RODAPÉ */
+/* ==================================== */
+.rodape {
+    background-color: var(--cor-fundo-principal); /* Fundo Preto */
+    padding: 30px 5%;
+    border-top: 2px solid var(--cor-fundo-secundario); /* Linha divisória sutil */
+    font-size: 0.85em; /* Fonte menor para rodapé */
+}
+
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.rodape-info p {
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.7); /* Texto em branco suave */
+}
+
+.rodape-links a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.rodape-links a:hover {
+    color: var(--cor-primaria-acao); /* Destaque Vermelho no hover */
+}
+
+.rodape-links .divisor {
+    margin: 0 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.rodape-sociais a {
+    /* Herda o estilo da seção contato */
+    color: var(--cor-texto-principal);
+    font-size: 1.2em;
+    margin-left: 15px;
+    opacity: 0.7;
+}
+
+/* Ajustes de responsividade para telas menores */
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .rodape-links {
+        order: 3; /* Move links para o final em mobile */
+    }
+    .rodape-sociais {
+        margin-bottom: 15px;
+    }
 }
