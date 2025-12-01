@@ -132,17 +132,23 @@ body {
 }
 
 .passo-card {
-    background-color: var(--cor-fundo-secundario); /* Cinza Escuro para dar profundidade */
+    background-color: var(--cor-fundo-secundario);
     padding: 40px;
     max-width: 350px;
-    flex: 1 1 300px; /* Flexbox para garantir responsividade */
+    flex: 1 1 300px;
     text-align: left;
-    border-top: 5px solid var(--cor-primaria-acao); /* Linha vermelha de destaque (P/B/V) */
-    transition: transform 0.3s ease;
+    border: 1px solid var(--cor-fundo-secundario); /* Borda inicial sutil */
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 0 transparent; /* Sombra inicial transparente */
 }
 
 .passo-card:hover {
-    transform: translateY(-5px); /* Efeito sutil de UX no hover */
+    transform: translateY(-5px); 
+    
+    border-color: var(--cor-primaria-acao); 
+    
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); 
 }
 
 .passo-numero {
@@ -152,6 +158,10 @@ body {
     display: block;
     margin-bottom: 15px;
     line-height: 1;
+}
+
+.passo-card:hover .passo-numero {
+    color: var(--cor-primaria-acao); 
 }
 
 .passo-titulo {
@@ -179,45 +189,62 @@ body {
 
 .depoimentos-container {
     display: flex;
-    justify-content: space-around;
-    gap: 25px;
+    justify-content: center;
+    gap: 40px; 
     flex-wrap: wrap; 
+    align-items: stretch;
 }
 
 .depoimento-card {
-    background-color: var(--cor-fundo-principal); /* Fundo preto novamente para alto contraste */
+    background-color: var(--cor-fundo-principal); 
     padding: 30px;
-    max-width: 380px;
+    max-width: 400px;
     flex: 1 1 300px;
     text-align: left;
     border-radius: 8px;
-    border-left: 5px solid var(--cor-primaria-acao); /* Destaque P/B/V na lateral */
+    border-bottom: 3px solid var(--cor-primaria-acao); 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
 }
 
 .depoimento-texto {
-    font-size: 1.1em;
+    font-size: 1.2em; 
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.depoimento-texto::before {
+    content: '“';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 5em;
+    color: var(--cor-fundo-secundario); 
+    opacity: 0.5;
+    line-height: 1;
+    z-index: 0;
 }
 
 .depoente-info {
     display: flex;
-    justify-content: space-between; /* Alinha nome à esquerda e estrelas à direita */
-    align-items: center;
+    flex-direction: column; 
+    align-items: flex-start;
     padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none; 
 }
 
 .depoente-nome {
-    font-family: var(--fonte-titulo);
-    color: var(--cor-primaria-acao); /* Nome em vermelho para autenticidade */
-    font-size: 0.9em;
-    text-transform: uppercase;
+    font-family: var(--fonte-corpo); 
+    color: var(--cor-primaria-acao);
+    font-size: 1em;
+    text-transform: capitalize;
 }
 
 .depoente-avaliacao {
-    color: gold; /* Estrelas em dourado (ou amarelo) para padrão visual de avaliação */
-    font-size: 1.1em;
+    color: var(--cor-primaria-acao); /* AJUSTADO PARA VERMELHO */
+    font-size: 1.2em;
 }
 
 
@@ -244,17 +271,18 @@ body {
 
 .plano-titulo {
     font-family: var(--fonte-titulo);
-    font-size: 1.8em;
-    color: var(--cor-texto-principal);
-    margin-bottom: 10px;
+    font-size: 2em; /* Título maior */
+    text-transform: uppercase; /* Em caixa alta */
+    margin-bottom: 15px;
 }
 
 .plano-preco {
     display: block;
-    font-size: 2.5em;
+    font-size: 3em; /* Preço GIGANTE para impacto */
     font-family: var(--fonte-titulo);
-    color: var(--cor-primaria-acao); /* Preço em Vermelho para atenção */
+    color: var(--cor-primaria-acao);
     margin-bottom: 30px;
+    font-weight: 700;
 }
 
 .plano-beneficios {
@@ -312,6 +340,17 @@ body {
     color: var(--cor-fundo-principal); /* PRETO */
 }
 
+.plano-tag-destaque {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--cor-fundo-principal); /* Preto */
+    color: var(--cor-primaria-acao); /* Vermelho */
+    padding: 5px 15px;
+    font-size: 0.8em;
+    font-family: var(--fonte-corpo);
+    border-radius: 0 8px 0 8px;
+}
 
 /* ==================================== */
 /* 8. SEÇÃO CONTATO E FORMULÁRIO */
@@ -345,14 +384,16 @@ body {
 }
 
 .campo-input, .campo-textarea {
-    background-color: var(--cor-fundo-principal); /* Campos de input em PRETO */
-    color: var(--cor-texto-principal); /* Texto digitado em BRANCO */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 4px;
+    background-color: transparent; /* Fundo transparente (moderno) */
+    color: var(--cor-texto-principal);
+    border: none; /* Remove a borda padrão */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
+    padding: 15px 0; /* Padding horizontal zero */
+    margin-bottom: 30px; /* Aumenta o espaçamento */
+    border-radius: 0;
     font-size: 1em;
     font-family: var(--fonte-corpo);
+    transition: border-bottom 0.3s ease;
 }
 
 .campo-textarea {
@@ -360,8 +401,13 @@ body {
     min-height: 120px;
 }
 
+.campo-input:focus, .campo-textarea:focus {
+    outline: none; /* Remove o contorno padrão do navegador */
+    border-bottom: 2px solid var(--cor-primaria-acao); /* Linha Vermelha no Foco (UX) */
+}
+
 .campo-input::placeholder, .campo-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5); /* Placeholder suave */
+    color: rgba(255, 255, 255, 0.5); 
 }
 
 .botao-enviar {
