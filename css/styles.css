@@ -1,24 +1,81 @@
+/* ==================================== */
+/* 0. VARIÁVEIS CSS (PALETA P/B/V) */
+/* ==================================== */
 :root {
-    /* PALETA PRINCIPAL P/B/V */
     --cor-primaria-acao: #FF0000;      /* Vermelho Intenso */
     --cor-fundo-principal: #000000;    /* Preto Absoluto */
     --cor-texto-principal: #FFFFFF;    /* Branco Puro */
     --cor-fundo-secundario: #1A1A1A;   /* Cinza Escuro */
 
-    /* TIPOGRAFIA */
-    --fonte-titulo: 'Oswald', sans-serif;
+    /* TIPOGRAFIA - As fontes devem ser importadas no HTML */
+    --fonte-titulo: 'Oswald', sans-serif; 
     --fonte-corpo: 'Inter', sans-serif;
 }
 
-/* Exemplo de uso: */
+/* ==================================== */
+/* 1. RESET E ESTILOS GERAIS */
+/* ==================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho do elemento */
+}
+
 body {
     background-color: var(--cor-fundo-principal);
     color: var(--cor-texto-principal);
     font-family: var(--fonte-corpo);
+    line-height: 1.6; /* Boa prática de UX para legibilidade */
+}
+
+
+
+/* ==================================== */
+/* 2. SEÇÃO CAPA INICIAL (A APRESENTAÇÃO) */
+/* ==================================== */
+.secao-principal {
+    min-height: 100vh; /* Ocupa a altura total da tela */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center;
+    padding: 20px;
+    
+    /* Adicione uma imagem de fundo aqui, se desejar */
+    /* background-image: url('caminho/para/imagem.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+.capa-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 5em; /* Título grande de impacto */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    max-width: 900px;
+    /* Use o vermelho como destaque se a imagem de fundo for P&B */
+    /* color: var(--cor-primaria-acao); */
+}
+
+.capa-subtitulo {
+    font-size: 1.5em;
+    margin-bottom: 40px;
 }
 
 .botao-cta {
+    display: inline-block; /* Para que o padding funcione corretamente */
     background-color: var(--cor-primaria-acao);
-    color: var(--cor-texto-principal); 
+    color: var(--cor-texto-principal);
     font-family: var(--fonte-titulo);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 18px 35px; /* Padding generoso para facilitar o clique (UX) */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+.botao-cta:hover {
+    background-color: #CC0000; /* Um tom de vermelho ligeiramente mais escuro no hover */
 }
