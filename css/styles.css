@@ -79,3 +79,71 @@ body {
 .botao-cta:hover {
     background-color: #CC0000; /* Um tom de vermelho ligeiramente mais escuro no hover */
 }
+
+
+
+/* ==================================== */
+/* 3. ESTILOS DE SEÇÃO GENÉRICOS */
+/* ==================================== */
+.secao-conteudo {
+    padding: 80px 5%; /* Padding superior e inferior, e margens laterais */
+    text-align: center;
+}
+
+.titulo-secao {
+    font-family: var(--fonte-titulo);
+    font-size: 3em;
+    color: var(--cor-texto-principal);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    position: relative;
+    /* Destaque sutil com o vermelho (opcional) */
+    /* border-bottom: 3px solid var(--cor-primaria-acao); */
+    /* padding-bottom: 15px; */
+}
+
+/* ==================================== */
+/* 4. SEÇÃO METODOLOGIA */
+/* ==================================== */
+.metodologia-passos {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Garante que os cards quebrem em telas menores (Responsividade) */
+}
+
+.passo-card {
+    background-color: var(--cor-fundo-secundario); /* Cinza Escuro para dar profundidade */
+    padding: 40px;
+    max-width: 350px;
+    flex: 1 1 300px; /* Flexbox para garantir responsividade */
+    text-align: left;
+    border-top: 5px solid var(--cor-primaria-acao); /* Linha vermelha de destaque (P/B/V) */
+    transition: transform 0.3s ease;
+}
+
+.passo-card:hover {
+    transform: translateY(-5px); /* Efeito sutil de UX no hover */
+}
+
+.passo-numero {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5em;
+    color: var(--cor-primaria-acao); /* O Vermelho guia a leitura */
+    display: block;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.passo-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 10px;
+}
+
+.passo-descricao {
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto-principal);
+    opacity: 0.8; /* Texto um pouco mais suave */
+}
