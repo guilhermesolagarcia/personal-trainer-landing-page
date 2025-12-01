@@ -38,7 +38,7 @@ Este projeto foi construído com uma abordagem **Mobile First** e implementa pr�
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [LINK_DO_SEU_REPOSITORIO]
+    git clone https://github.com/guilhermesolagarcia/personal-trainer-landing-page.git
     cd personal-trainer-landing-page
     ```
 2.  **Abra o arquivo:**
