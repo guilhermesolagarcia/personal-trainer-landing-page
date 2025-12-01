@@ -63,17 +63,17 @@ body {
 }
 
 .botao-cta {
-    display: inline-block; /* Para que o padding funcione corretamente */
-    background-color: var(--cor-primaria-acao);
-    color: var(--cor-texto-principal);
+    display: inline-block;
+    background-color: var(--cor-primaria-acao); /* Vermelho Padrão */
+    color: var(--cor-texto-principal);          /* Texto Branco Padrão */
     font-family: var(--fonte-titulo);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.2em;
-    padding: 18px 35px; /* Padding generoso para facilitar o clique (UX) */
-    border: none;
+    padding: 18px 35px;
+    border: 2px solid transparent; /* Adiciona uma borda transparente para evitar "pulo" no hover */
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
+    transition: all 0.3s ease;
 }
 
 .botao-cta:hover {
@@ -199,4 +199,96 @@ body {
 .depoente-avaliacao {
     color: gold; /* Estrelas em dourado (ou amarelo) para padrão visual de avaliação */
     font-size: 1.1em;
+}
+
+
+/* ==================================== */
+/* 6. SEÇÃO PLANOS E SERVIÇOS */
+/* ==================================== */
+.planos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.plano-card {
+    background-color: var(--cor-fundo-secundario); /* Cinza Escuro */
+    padding: 40px 30px;
+    max-width: 350px;
+    flex: 1 1 300px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.plano-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 10px;
+}
+
+.plano-preco {
+    display: block;
+    font-size: 2.5em;
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria-acao); /* Preço em Vermelho para atenção */
+    margin-bottom: 30px;
+}
+
+.plano-beneficios {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.plano-beneficios li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.check-icon {
+    color: var(--cor-primaria-acao); /* Ícones em Vermelho para destaque */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.beneficio-excluido {
+    opacity: 0.5; /* Opacidade menor para benefícios não incluídos */
+}
+
+/* DESTAQUE UX: PLANO PRINCIPAL */
+.plano-destaque {
+    background-color: var(--cor-primaria-acao); /* Fundo TOTALMENTE VERMELHO */
+    color: var(--cor-fundo-principal); /* Texto e maioria dos elementos em PRETO sobre o vermelho */
+    transform: scale(1.05); /* Ligeiro aumento para saltar da tela */
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+    border: none;
+}
+
+/* Garante que o texto, preço e itens da lista do destaque sejam PRETO */
+.plano-destaque .plano-titulo,
+.plano-destaque .plano-preco,
+.plano-destaque .plano-beneficios li {
+    color: var(--cor-fundo-principal); /* PRETO */
+}
+
+.plano-destaque .plano-cta { 
+    background-color: var(--cor-fundo-principal); /* Fundo do botão PRETO */
+    color: var(--cor-texto-principal);             /* Texto do botão VERMELHO */
+    border-color: var(--cor-fundo-principal);    /* Borda PRETA para maior contraste */
+}
+
+.plano-destaque .plano-cta:hover {
+    /* No hover, o fundo pode inverter para Vermelho, mas a borda e o texto invertem para o Preto */
+    background-color: var(--cor-fundo-secundario); /* Cinza Escuro no hover */
+    color: var(--cor-texto-principal);             /* Texto VERMELHO */
+    border-color: var(--cor-fundo-principal);
+}
+
+/* Garante que o ícone de checagem do destaque seja PRETO */
+.plano-destaque .check-icon {
+    color: var(--cor-fundo-principal); /* PRETO */
 }
