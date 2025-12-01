@@ -292,3 +292,97 @@ body {
 .plano-destaque .check-icon {
     color: var(--cor-fundo-principal); /* PRETO */
 }
+
+
+/* ==================================== */
+/* 7. SEÇÃO CONTATO E FORMULÁRIO */
+/* ==================================== */
+.secao-contato {
+    background-color: var(--cor-fundo-secundario); /* Cinza Escuro */
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.contato-mensagem {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.contato-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.formulario-contato {
+    flex: 1 1 450px; /* Formulário ocupa mais espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-input, .campo-textarea {
+    background-color: var(--cor-fundo-principal); /* Campos de input em PRETO */
+    color: var(--cor-texto-principal); /* Texto digitado em BRANCO */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: var(--fonte-corpo);
+}
+
+.campo-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.campo-input::placeholder, .campo-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Placeholder suave */
+}
+
+.botao-enviar {
+    margin-top: 10px;
+    background-color: var(--cor-primaria-acao); /* Vermelho Intenso */
+    color: var(--cor-texto-principal); /* Texto Branco */
+    border: none;
+}
+
+/* Contato Direto (WhatsApp) */
+.contato-direto {
+    flex: 1 1 300px;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-link {
+    margin-bottom: 30px;
+}
+
+.whatsapp-cta {
+    background-color: #25D366; /* Verde WhatsApp (quebra a regra P/B/V propositalmente para reconhecimento) */
+    border-color: #25D366;
+    margin-top: 10px;
+}
+
+/* Estilização para Ícones Sociais (simples) */
+.redes-sociais a {
+    color: var(--cor-texto-principal);
+    font-size: 1.5em;
+    margin: 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.redes-sociais a:hover {
+    opacity: 1;
+    color: var(--cor-primaria-acao); /* Destaque Vermelho no hover */
+}
